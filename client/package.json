@@ -13,9 +13,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@chakra-ui/react": "^2.6.1",
-    "@emotion/react": "^11.11.0",
-    "@emotion/styled": "^11.11.0",
+    "@chakra-ui/react": "^1.8.8",
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
     "@rajesh896/video-thumbnails-generator": "^2.3.9",
     "@thetalabs/theta-js": "^0.0.82",
     "axios": "^1.4.0",
@@ -23,8 +23,9 @@
     "clappr-playback-rate-plugin": "^0.7.0",
     "clappr-stats": "^0.1.5",
     "emoji-picker-react": "^4.4.9",
-    "framer-motion": "^10.12.12",
-    "hls.js": "^1.4.3",
+    "ethers": "^6.4.0",
+    "framer-motion": "^4.1.17",
+    "hls.js": "^1.1.5",
     "nanoid": "^4.0.2",
     "nuka-carousel": "^6.0.3",
     "plyr-react": "^5.2.0",
@@ -56,5 +57,17 @@
     "stream-http": "^3.2.0",
     "streaming-iterables": "^7.1.0",
     "url": "^0.11.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
