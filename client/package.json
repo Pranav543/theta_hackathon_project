@@ -17,6 +17,7 @@
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
     "@rajesh896/video-thumbnails-generator": "^2.3.9",
+    "@thetalabs/theta-js": "^0.0.82",
     "axios": "^1.4.0",
     "clappr": "^0.3.13",
     "clappr-playback-rate-plugin": "^0.7.0",
