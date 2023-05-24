@@ -14,8 +14,10 @@
   "license": "ISC",
   "dependencies": {
     "@chakra-ui/react": "^1.8.8",
+    "@clappr/player": "^0.5.0",
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
+    "@metamask/detect-provider": "^2.0.0",
     "@rajesh896/video-thumbnails-generator": "^2.3.9",
     "@thetalabs/theta-js": "^0.0.82",
     "axios": "^1.4.0",
