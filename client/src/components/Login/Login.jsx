@@ -8,7 +8,6 @@ import nft from "../../assets/nft.gif";
 import world from "../../assets/meta.jpg";
 import platform from "../../assets/platform.jpg";
 import { useMetaMask } from "../../hooks/useMetamask";
-import { formatAddress } from "../../utils";
 
 class PagingDots extends React.Component {
   getIndexes(count, inc) {
@@ -72,27 +71,15 @@ class PagingDots extends React.Component {
 }
 
 function Login() {
-  const { wallet, hasProvider, isConnecting, connectMetaMask } = useMetaMask();
+  const { currentAccount, isConnected, connectMetaMask, currentBalance } = useMetaMask();
+
+  console.log("currentAccount: ", currentAccount);
+  console.log("isConnected: ", isConnected);
+  console.log("currentBalance: ", currentBalance);
 
   React.useEffect(() => {
     window.localStorage.setItem("chakra-ui-color-mode", "dark");
   }, []);
-
-  const metaMask = () => {
-    try {
-      connectMetaMask();
-      console.log("wallet: ", wallet);
-      if (wallet) {
-        const user = wallet.accounts[0];
-
-        localStorage.setItem("userLogged", user.toLowerCase());
-        window.location.reload();
-      }
-      console.log("account: ", account);
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
   return (
     <>
@@ -227,8 +214,8 @@ function Login() {
                         _hover={{
                           boxShadow: "-0.1em 0 .4em #100B1C;",
                         }}
-                        onClick={metaMask}
-                        disabled={isConnecting}
+                        onClick={connectMetaMask}
+                        disabled={isConnected}
                       >
                         <Box d="flex">
                           <Image src={metamask} width="3.5rem" alt="metamask" />{" "}
