@@ -1,5 +1,9 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useEffect } from "react";
 import { Box, Center, Spinner, useColorMode } from "@chakra-ui/react";
+import { useMetaMask } from "./hooks/useMetamask.jsx";
+
+import axios from "axios";
+const apiUrl = `${process.env.REACT_APP_SERVER_HOST}/`
 
 const Login = React.lazy(() => import("./components/Login/Login"));
 const Dashboard = React.lazy(() => import("./components/Dashboard/Dashboard"));
@@ -7,18 +11,11 @@ const Dashboard = React.lazy(() => import("./components/Dashboard/Dashboard"));
 function App() {
   const { colorMode } = useColorMode();
   const [isLoading, setIsloading] = React.useState(true);
-  const [connected, setConnected] = React.useState(false);
-  const verifyConnection = async () => {
-    if (
-      localStorage.getItem("userLogged") !== null &&
-      localStorage.getItem("userLogged") !== "null" &&
-      localStorage.getItem("userLogged") !== undefined &&
-      localStorage.getItem("userLogged") !== "undefined"
-    ) {
-      setConnected(true);
+  const {  isConnected, currentAccount } = useMetaMask();
+  const verifyConnection = () => {
+    if (isConnected) {
       setIsloading(false);
     } else {
-      setConnected(false);
       setIsloading(false);
     }
   };
@@ -26,8 +23,28 @@ function App() {
   React.useEffect(() => {
     verifyConnection();
   }, []);
+
+  const generateToken = async () => {
+    const res =  await axios.post(apiUrl + "generateToken", {
+      user: currentAccount.toLowerCase()
+    })
+    return res
+  }
+
+  React.useEffect(() => {
+    if (isConnected) {
+      setIsloading(false);
+      const getToken = async () => {
+        const res = await generateToken();
+        const token = res.data.token
+        window.localStorage.setItem("auth-token", token);
+      };
+      getToken();
+    }
+  }, [isConnected]);
   
-  if (!connected) {
+
+  if (!isConnected) {
     return (
       <>
         {isLoading ? (
