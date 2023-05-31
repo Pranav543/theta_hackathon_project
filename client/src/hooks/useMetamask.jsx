@@ -20,10 +20,11 @@ export const MetaMaskContextProvider = ({ children }) => {
 
       if (provider) {
         // Connect to MetaMask
-        await provider.request({ method: 'eth_requestAccounts' });
-        setIsConnected(true);
+        const accounts = await provider.request({ method: 'eth_requestAccounts' });
+        setCurrentAccount(accounts[0]);
         const web3Provider = new ethers.providers.Web3Provider(window.ethereum);
         setWeb3Provider(web3Provider);
+        setIsConnected(true);
       } else {
         console.error('MetaMask not found');
       }
@@ -41,7 +42,6 @@ export const MetaMaskContextProvider = ({ children }) => {
       // Account changed
       setCurrentAccount(accounts[0]);
       localStorage.setItem("userLogged", accounts[0].toLowerCase());
-        window.location.reload();
     }
   };
 
