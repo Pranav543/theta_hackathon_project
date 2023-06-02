@@ -39,9 +39,6 @@ and testing purposes.
 
 Make sure you also have Mongo Atlas Project created and running. Add the required keys in .env file
 
-```
-Give examples
-```
 
 ### Installing
 
@@ -92,10 +89,6 @@ cd client
 ```
 yarn start
 ```
-
-## 🎈 Usage <a name="usage"></a>
-
-Add notes about how to use the system.
 
 ## ⛏️ Built With <a name = "tech_stack"></a>
 
