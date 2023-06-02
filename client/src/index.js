@@ -7,9 +7,6 @@ import { MetaMaskContextProvider } from './hooks/useMetamask'
 import theme from './theme'
 import './styles.css'
 
-const id = process.env.REACT_APP_APP_SERVER_ID ?? ""
-const url = process.env.REACT_APP_APP_SERVER_URL ?? ""
-
 ReactDOM.render(
   <React.StrictMode>
     

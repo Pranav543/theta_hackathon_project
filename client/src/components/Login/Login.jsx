@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { Box, Text, Button, Center, Image } from "@chakra-ui/react";
-import React from "react";
+import React, { useEffect } from "react";
 import Carousel from "nuka-carousel";
 import qr from "../../assets/qr.png";
 import metamask from "../../assets/metamask.png";
@@ -8,6 +8,8 @@ import nft from "../../assets/nft.gif";
 import world from "../../assets/meta.jpg";
 import platform from "../../assets/platform.jpg";
 import { useMetaMask } from "../../hooks/useMetamask";
+
+
 
 class PagingDots extends React.Component {
   getIndexes(count, inc) {
@@ -71,11 +73,7 @@ class PagingDots extends React.Component {
 }
 
 function Login() {
-  const { currentAccount, isConnected, connectMetaMask, currentBalance } = useMetaMask();
-
-  console.log("currentAccount: ", currentAccount);
-  console.log("isConnected: ", isConnected);
-  console.log("currentBalance: ", currentBalance);
+  const {  isConnected, connectMetaMask } = useMetaMask();
 
   React.useEffect(() => {
     window.localStorage.setItem("chakra-ui-color-mode", "dark");
