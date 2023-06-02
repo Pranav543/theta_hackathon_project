@@ -110,7 +110,7 @@ function Login() {
               >
                 <Box height="100%" width="100%" pt={5} pb={10}>
                   <Text as="h1" fontSize="2rem" fontWeight="bold" pb={3}>
-                    Stream Scape Universe
+                  Cratch Universe
                   </Text>
                   <Box borderRadius="5px">
                     <Image
@@ -134,7 +134,7 @@ function Login() {
                 </Box>
                 <Box height="100%" width="100%" pt={5} pb={10}>
                   <Text as="h1" fontSize="2rem" fontWeight="bold" pb={3}>
-                    Stream Scape World
+                  Cratch World
                   </Text>
                   <Box bg="#FDF1F4" borderRadius="5px">
                     <Image
@@ -149,10 +149,10 @@ function Login() {
                     <span style={{ color: "#0d3ac1" }}>
                       Create, Watch & Earn
                     </span>{" "}
-                    in Stream Scape
+                    in Cratch
                   </Text>
                   <Text as="h3" fontSize="1.1rem" pb={5}>
-                    Share your content in Stream Scape and create a brand,
+                    Share your content in Cratch and create a brand,
                     commuity. Go live and experience a new world of MetaStreams.
                   </Text>
                 </Box>

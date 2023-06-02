@@ -576,10 +576,10 @@ function Studio() {
                         fontSize="0.8rem"
                         color="rgb(255,255,255,0.50)"
                       >
-                        By submitting your videos to Stream Scape, you acknowledge
-                        that you agree to Stream Scape's{" "}
+                        By submitting your videos to Cratch, you acknowledge
+                        that you agree to Cratch's{" "}
                         <Link
-                          href="https://stream-scape.io/terms"
+                          href="https://cratch.io/terms"
                           color="#3ea6ff"
                           isExternal
                         >
@@ -677,7 +677,7 @@ function Studio() {
                       color="white"
                       pt={5}
                     >
-                      Go live on Stream Scape
+                      Go live on Cratch
                     </Text>
                     <Text
                       as="h4"

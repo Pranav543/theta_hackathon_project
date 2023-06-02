@@ -580,7 +580,7 @@ function StreamInfo() {
                                 pr={12}
                                 children={
                                   copy === 1 ? (
-                                    <Copyied textValue="rtmp://127.0.0.1:1935/stream/" />
+                                    <Copyied textValue="rtmp://live5in.thetavideoapi.com/live" />
                                   ) : (
                                     <Copy
                                       id={1}
